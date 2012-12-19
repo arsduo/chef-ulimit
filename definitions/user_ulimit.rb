@@ -11,7 +11,7 @@
 define :user_ulimit, :filehandle_limit => 4096, :process_limit => 61232 do
   template "/etc/security/limits.d/#{params[:name]}_limits.conf" do
     source "ulimit.erb"
-    cookbook "ulimit"
+    cookbook "chef-ulimit"
     owner "root"
     group "root"
     mode 0644
