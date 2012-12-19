@@ -16,7 +16,7 @@ define :user_ulimit, :filehandle_limit => 4096, :process_limit => 61232 do
     group "root"
     mode 0644
     variables(
-      :ulimit_user => params[:name],
+      :ulimit_users => params[:name].to_s.split(","),
       :filehandle_limit => params[:filehandle_limit],
       :process_limit => params[:process_limit]
     )

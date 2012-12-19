@@ -1,8 +1,10 @@
-# Limits settings for <%= @ulimit_user %>
+<% @ulimit_users.each do |ulimit_user| %>
+  # Limits settings for <%= ulimit_user %>
 
-<%= @ulimit_user -%> soft nofile <%= @filehandle_limit %>
-<%= @ulimit_user -%> hard nofile <%= @filehandle_limit %>
+  <%= ulimit_user -%> soft nofile <%= @filehandle_limit %>
+  <%= ulimit_user -%> hard nofile <%= @filehandle_limit %>
 
-<%= @ulimit_user -%> soft nproc <%= @process_limit %>
-<%= @ulimit_user -%> hard nproc <%= @process_limit %>
+  <%= ulimit_user -%> soft nproc <%= @process_limit %>
+  <%= ulimit_user -%> hard nproc <%= @process_limit %>
+<% end %>
 
